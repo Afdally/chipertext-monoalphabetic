@@ -6,7 +6,7 @@
 }
 
 body {
-    background: url('/Kriptografi/background.jpg');
+    background: url('/background.jpg');
     min-height: 100vh;
     display: flex;
     justify-content: center;
