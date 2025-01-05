@@ -1,58 +1,38 @@
-
-</html>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher - Kriptografi Modern</title>
+    <title>Enkripsi File PDF - DES</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🔐 Caesar Cipher</h1>
-            <p class="subtitle">Enkripsi dan Dekripsi Pesan dengan Aman</p>
+            <div class="icon-container">
+                🔐
+            </div>
+            <h1>Enkripsi File PDF</h1>
+            <p class="subtitle">Amankan file PDF Anda dengan algoritma DES</p>
         </header>
+
 
         <div class="card">
             <div class="input-group">
-                <label for="inputText">📝 Teks</label>
-                <textarea id="inputText" rows="4" placeholder="Masukkan teks yang ingin dienkripsi atau didekripsi..."></textarea>
+                <label for="fileInput">📂 Pilih File (PDF):</label>
+                <input type="file" id="fileInput" accept=".pdf">
             </div>
-
-            <div class="controls">
-                <div class="shift-control">
-                    <label for="shiftAmount">🔄 Pergeseran:</label>
-                    <input type="number" id="shiftAmount" value="3" min="1" max="25">
-                </div>
-                <div class="shift-control">
-                    <label for="preserveCase">
-                        <input type="checkbox" id="preserveCase" checked>
-                        Pertahankan huruf besar/kecil
-                    </label>
-                </div>
+            <div class="input-group">
+                <label for="keyInput">🔑 Masukkan Kunci (8 karakter):</label>
+                <input type="text" id="keyInput" maxlength="8" placeholder="Contoh: mysecret">
             </div>
-
             <div class="button-group">
-                <button class="encrypt-btn" onclick="encryptText()">🔒 Enkripsi</button>
-                <button class="decrypt-btn" onclick="decryptText()">🔓 Dekripsi</button>
-                <button class="clear-btn" onclick="clearText()">🗑️ Hapus</button>
-            </div>
-
-            <div class="output-section">
-                <h2>📤 Hasil:</h2>
-                <p id="outputText">Hasil akan muncul di sini...</p>
-                <button class="copy-btn" onclick="copyToClipboard()">📋 Salin Hasil</button>
-            </div>
-
-            <div class="history-section">
-                <h2>📜 Riwayat</h2>
-                <div id="history"></div>
+                <button class="encrypt-btn" onclick="encryptFile()">🔒 Enkripsi File</button>
+                <button class="decrypt-btn" onclick="decryptFile()">🔓 Dekripsi File</button>
             </div>
         </div>
     </div>
-
 </body>
 </html>
